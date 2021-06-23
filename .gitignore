@@ -1,6 +1,7 @@
 *.pyc
 .*
 *.mo
+extensions/odoo_theme/static/style.css
 
 # Sphinx build files
 _build/

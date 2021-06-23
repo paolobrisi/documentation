@@ -382,7 +382,7 @@ we are considering the feature if there is enough demand.
 In case the domain of your users email addresses use SPF (Sender Policy Framework) or DKIM
 (DomainKeys Identified Mail), don't forget to authorize Odoo as a sending host in your domain name
 settings to increase the deliverability of your outgoing emails.
-The configuration steps are explained in the :ref:`Discuss app documentation <discuss-email_servers-spf-compliant>`.
+The configuration steps are explained in the :ref:`Discuss app documentation <spf_compliant>`.
 
 .. Warning::
   Forgetting to configure your SPF or DKIM to authorize Odoo as a sending host can lead to the

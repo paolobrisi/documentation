@@ -12,3 +12,4 @@ Miscellaneous
     general/voip
     general/in_app_purchase
     general/developer_mode
+    general/email_communication
