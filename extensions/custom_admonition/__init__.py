@@ -1,4 +1,4 @@
-""" Add a new "exercise" admonition directive. """
+""" Add new custom admonition directives. """
 
 from docutils import nodes
 from docutils.parsers.rst.directives import admonitions
@@ -13,10 +13,23 @@ class Exercise(admonitions.BaseAdmonition):
     node_class = exercise
 
 
+class example(nodes.Admonition, nodes.Element):
+    pass
+
+
+class Example(admonitions.BaseAdmonition):
+    node_class = example
+
+
 def setup(app):
     app.add_directive('exercise', Exercise)
     app.add_node(exercise, html=(
         lambda self, node: self.visit_admonition(node, 'exercise'),
+        lambda self, node: self.depart_admonition(node),
+    ))
+    app.add_directive('example', Example)
+    app.add_node(example, html=(
+        lambda self, node: self.visit_admonition(node, 'example'),
         lambda self, node: self.depart_admonition(node),
     ))
 
@@ -27,3 +40,4 @@ def setup(app):
 
 
 admonitionlabels['exercise'] = 'Exercise'
+admonitionlabels['example'] = 'Example'

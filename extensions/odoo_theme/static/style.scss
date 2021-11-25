@@ -959,6 +959,20 @@ header.o_main_header {
                 }
             }
 
+            &.alert-example {
+                border-color: tint-color($doc_example, 30%);
+                background-color: tint-color($doc_example, 90%);
+                color: shade-color($doc_example, 35%);
+
+                > .alert-title, > h3 {
+                    color: shade-color($doc_example, 35%);
+                }
+
+                > .alert-title:before, > h3:before {
+                    content: '#{$i-knowledge}';
+                }
+            }
+
             &.alert-go_to {
                 border-color: $o-violet;
                 background-color: $gray-lightest;

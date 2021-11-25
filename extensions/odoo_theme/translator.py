@@ -35,6 +35,7 @@ ADMONITION_MAPPING = {
     'error': 'alert-danger',
 
     'exercise': 'alert-exercise',
+    'example': 'alert-example',
 }
 
 
