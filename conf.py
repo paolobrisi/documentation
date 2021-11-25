@@ -121,6 +121,9 @@ extensions = [
     # Link sources in other projects (used to build the reference doc)
     'sphinx.ext.intersphinx',
 
+    # Embed Graphviz graphs
+    'sphinx.ext.graphviz',
+
     # Support the specialized to-do directives
     'sphinx.ext.todo',
 
