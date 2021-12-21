@@ -11,5 +11,6 @@ Miscellaneous
     general/payment_acquirers
     general/voip
     general/calendars
+    general/digest_emails
     general/in_app_purchase
     general/developer_mode
