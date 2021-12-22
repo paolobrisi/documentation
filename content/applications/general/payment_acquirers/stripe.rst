@@ -14,12 +14,30 @@ Configuration
 Credentials tab
 ---------------
 
-Odoo needs your **API Credentials** to connect with your Stripe account, which comprises:
+On premise or on Odoo SH, Odoo needs your **API Credentials** to connect with your Stripe account,
+which comprises:
 
 - :ref:`Publishable Key <stripe/api_keys>`: The key solely used to identify the account with Stripe.
 - :ref:`Secret Key <stripe/api_keys>`: The key to sign the merchant account with Stripe.
 - :ref:`Webhook Signing Secret <stripe/webhook>`: When you enable your webhook on your Stripe
   account, this signing secret must be set to authenticate the messages sent from Stripe to Odoo.
+
+You'll be able to easily create your account by using the **Connect Stripe** button. Once you come
+back on your database from the onboarding :
+
+1) Copy/paste your Publishable and Secret keys (see :ref:`below <stripe/api_keys>`);
+2) Generate your webhook by clicking the **Generate your webhook** button.
+
+On SaaS, click the button **Connect Stripe** and follow the Stripe Onboarding :
+
+1) Fill the Stripe Onboarding information in order to create your account;
+2) Stripe sends an email to validate your email address;
+3) At the end of the process, you're redirected to Odoo. If you completed Stripe onboarding, you're
+   all set and your acquirer is enabled.
+
+.. note::
+   On SaaS, it's also possible to set your own :ref:`API Keys <stripe/api_keys>`. You have to
+   activate the :ref:`Debug Mode <developer-mode>` and go to the Stripe Acquirer form.
 
 .. important::
    If you are trying Stripe as a test, in the **test mode**, change the **State** to *Test
@@ -40,6 +58,10 @@ Webhook Signing Secret
 ~~~~~~~~~~~~~~~~~~~~~~
 
 To retrieve the webhook signing secret, you first need to create a webhook.
+
+.. note::
+   If your instance is up-to-date on version 15.0, simply click the button **Generate your Webhook**
+   and you're all set.
 
 To do so, follow this `link to your webhooks <https://dashboard.stripe.com/webhooks>`_, or log into
 your Stripe dashboard and go to :menuselection:`Developers --> Webhooks`. Then, click on **Add
