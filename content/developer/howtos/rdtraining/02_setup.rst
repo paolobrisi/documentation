@@ -460,5 +460,13 @@ Here is a list of commands:
         limit_time_cpu = 9999
         limit_time_real = 9999
 
+Additional reading
+------------------
+
+Feel free to read our `welcome <https://github.com/odoo/enterprise/wiki/Welcome>`__ page has extra info about
+working at Odoo as well as additional `tutorials <https://github.com/odoo/enterprise/wiki/Welcome#3-technical-training>`__ that are
+both language and Odoo specific. Note that the information contained therein might feel a bit overhwelming at this stage, so don't hesistate to skim, skip
+and come back to it later when you need it!
+
 Now that your server is running, it's time to start
 :ref:`writing your own application <howto/rdtraining/03_newapp>`!
