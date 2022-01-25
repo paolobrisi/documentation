@@ -22,11 +22,21 @@ Install and configure git
 -------------------------
 
 The very first step of the installation process is to install the `git version control system <https://git-scm.com/>`__
-because the Odoo source code is managed on GitHub. Once installed, you can set your name and email:
+because the Odoo source code is managed on GitHub.
+
+Git can be installed `on Linux <https://git-scm.com/download/linux>`__ , `on Windows <https://git-scm.com/download/win>`__ or `MacOS <https://git-scm.com/download/mac>`__.
+
+If you're using the laptop provided to you by Odoo, Git should already be installed.
+If it is not, you can install it with:
 
 .. code-block:: console
 
     $ sudo apt install git
+
+Once installed, you can set your name and email:
+
+.. code-block:: console
+
     $ git config --global user.name "Your full name"
     $ git config --global user.email "xyz@odoo.com"
 
@@ -460,13 +470,103 @@ Here is a list of commands:
         limit_time_cpu = 9999
         limit_time_real = 9999
 
-Additional reading
-------------------
+Additional resources
+--------------------
 
-Feel free to read our `welcome <https://github.com/odoo/enterprise/wiki/Welcome>`__ page has extra info about
-working at Odoo as well as additional `tutorials <https://github.com/odoo/enterprise/wiki/Welcome#3-technical-training>`__ that are
-both language and Odoo specific. Note that the information contained therein might feel a bit overhwelming at this stage, so don't hesistate to skim, skip
-and come back to it later when you need it!
+Below are links to resources that could prove helpful during this tutorial.
+
+Git
+^^^
+
+- Atlassian has a set of `excellent tutorials <https://www.atlassian.com/git/tutorials/>`__.
+- Particularly, how to
+  `rewrite the history <https://www.atlassian.com/git/tutorials/rewriting-history>`__.
+- If the Atlassian tutorial does not work for you, W3schools offers a
+  `very nice alternative <https://www.w3schools.com/git/>`__.
+- To visualize the effect of git commands on the commits graphs, play with this
+  `interactive tutorial <https://learngitbranching.js.org/>`__.
+- If you want to read more about Github, their
+  `documentation <https://docs.github.com/en/get-started/quickstart/hello-world>`__
+  includes a comprehensive introduction.
+
+Python
+^^^^^^
+
+- Don't forget about `Python official documentation <https://docs.python.org/3/>`__
+  (and make sure to select the correct version at the top of the page!).
+- `The Hitchhiker's Guide <https://docs.python-guide.org/>`__ will teach you the good practices of
+  Python.
+- If you have good experience of similar languages or just need a quick recall,
+  `this guide <https://learnxinyminutes.com/docs/python3/>`__ is made for you.
+
+Javascript
+^^^^^^^^^^
+
+- You should find a tutorial that suits your level in this `"re-introduction" to JavaScript
+  <https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript>`__.
+- If you just need a quick recall, `this one <https://learnxinyminutes.com/docs/javascript/>`__
+  will do the trick.
+
+(Postgre)SQL
+^^^^^^^^^^^^
+
+- If you are not familiar with PostgreSQL, `these exercises <https://www.pgexercises.com/>`__
+  will teach you better than any long documentation.
+- Even though you shouldn't have to interact with it, you might be interested to know
+  that Odoo uses `psycopg2 <https://www.psycopg.org/docs/usage.html>`__ to interact
+  with its SQL backend.
+
+Debugging
+^^^^^^^^^
+
+At first, a simple `print(...)` statement here and there might do the trick. After a while
+however, learning how to use a proper debugger will make the experience much better for you.
+
+In the `Debugging page <https://github.com/odoo/enterprise/wiki/Debugging>`__,
+we present two of the most common debuggers to track down bugs in Python,
+and how you can use them with Odoo.
+
+Mixins
+^^^^^^
+
+If you need to interface with common Odoo features such as the chatter, you can rely on
+`mixins <https://www.odoo.com/documentation/master/developer/reference/mixins.html>`__.
+They are Odoo models exposing useful methods through inheritance.
+
+To learn and play with mixins, visit
+`this repository <https://github.com/tivisse/odoodays-2018/>`__.
+This module for a plant nursery is training material developed for the OXP 2018.
+You don't need to code it on your side. But you can check the presentations in the `/static/pdf`
+directory and play with the module to discover some magic features in Odoo.
+
+Security
+^^^^^^^^
+
+Every day we hear about data leaks and attacks in the newspapers.
+We expect you to be aware and careful about how to avoid security breaches in your future
+developments.
+
+You will define new models during your training, and there are some things
+at which you should pay extra attention:
+
+- No or wrong access rules on models.
+- Introduction of public methods that should actually be private.
+- Wrong manipulation of access tokens.
+- No or wrong `ir.rules` (restriction rules) on models.
+- Introduction of SQL injections.
+- etc.
+
+Please check this
+`presentation from Olivier Dony (odo)
+<https://docs.google.com/presentation/d/1oDINxPtHWz31V8-2W0h2u2ubaKgz9lmbyfx9DJI4lTw/edit>`__
+about common mistakes that you should **absolutely** avoid in your future developments.
+
+Also, please always use this
+`security checklist
+<https://docs.google.com/presentation/d/1oDINxPtHWz31V8-2W0h2u2ubaKgz9lmbyfx9DJI4lTw/edit#slide=id.g2faad955b1_0_6>`__
+to double check your development and avoid further embarrassing issues.
+
+Back to the training!
 
 Now that your server is running, it's time to start
 :ref:`writing your own application <howto/rdtraining/03_newapp>`!
